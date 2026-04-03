@@ -1,127 +1,304 @@
-/* Configurações Gerais */
-* {
-    box-sizing: border-box;
+:root {
+    --primary: #1e40af;
+    --secondary: #64748b;
+    --error: #b91c1c;
+    --bg: #f8fafc;
+    --border: #cbd5e1;
 }
 
-body { 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    padding: 20px; 
-    line-height: 1.6; 
-    max-width: 650px; /* Aumentamos um pouco para acomodar melhor os grupos */
-    margin: 0 auto;
-    background-color: #f0f2f5;
-    color: #333;
+body {
+    background-color: var(--bg);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    padding: 2rem 1rem;
+    line-height: 1.5;
 }
 
 main {
-    background: #ffffff;
-    padding: 30px;
+    max-width: 700px; /* Reduzi um pouco a largura para não ficar muito esticado */
+    margin: 0 auto;
+    background: white;
+    padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
 }
 
-h1 {
-    color: #1a3a5a;
-    margin-bottom: 10px;
-}
-
-header p {
-    margin-bottom: 25px;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* Estilização dos Grupos (Fieldsets) */
-fieldset { 
-    border: 2px solid #e1e4e8; 
-    padding: 20px; 
-    margin-bottom: 30px; 
+fieldset {
+    border: 1px solid var(--border);
     border-radius: 8px;
-    transition: border-color 0.3s ease;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-fieldset:focus-within {
-    border-color: #0056b3; /* Destaca o grupo que está sendo preenchido */
+legend {
+    padding: 0 10px;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.2rem;
 }
 
-legend { 
-    font-weight: bold; 
-    padding: 0 10px; 
-    color: #0056b3;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+/* Força uma linha por campo */
+.grid-form {
+    display: grid;
+    grid-template-columns: 1fr; /* Apenas uma coluna */
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
-/* Espaçamento entre os campos */
-form p { 
-    margin-bottom: 18px; 
+.campo {
+    display: flex;
+    flex-direction: column;
 }
 
-label { 
-    display: block; 
-    font-weight: 600; 
-    margin-bottom: 8px; 
+label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #334155;
 }
 
-/* Estilização dos Inputs, Selects e Datas */
-input[type="text"], 
-input[type="email"], 
-input[type="date"],
-select { 
-    width: 100%; 
-    padding: 12px; 
-    border: 2px solid #ccd1d9; 
-    border-radius: 6px; 
+input, select, textarea {
+    padding: 12px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
     font-size: 1rem;
-    background-color: #fff;
-    color: #333;
+    width: 100%;
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
 }
 
-/* Estilo específico para Checkbox */
-input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    vertical-align: middle;
-    margin-right: 8px;
-    cursor: pointer;
-}
-
-/* FOCO ACESSÍVEL (Crucial para a Parte 2 da Atividade) */
-input:focus, 
-select:focus, 
-button:focus { 
+input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: #0056b3;
-    box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.25);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.2);
 }
 
-/* Botão de Envio */
-button { 
-    width: 100%; 
-    padding: 16px; 
-    background-color: #0056b3; 
-    color: white; 
-    border: none; 
-    border-radius: 8px; 
-    font-weight: bold; 
+/* Estilo para Checkbox em linha própria */
+.campo-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+.campo-check input {
+    width: auto; /* Checkbox não deve ter 100% de largura */
+    margin-top: 4px;
+}
+
+.acoes {
+    display: flex;
+    flex-direction: column; /* Botões também ficam um embaixo do outro no mobile */
+    gap: 15px;
+}
+
+@media (min-width: 600px) {
+    .acoes {
+        flex-direction: row; /* Em telas maiores, botões lado a lado */
+    }
+}
+
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
     font-size: 1.1rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
-button:hover {
-    background-color: #004494;
+.btn-enviar { background-color: var(--primary); color: rgb(255, 255, 255); flex: 2; }
+.btn-limpar { background-color: var(--secondary); color: white; flex: 1; }
+
+.req { color: var(--error); font-weight: bold; }
+ 
+
+
+
+/* tabela */
+:root {
+    --primary: #1e40af;
+    --text: #334155;
+    --white: #ffffff;
+   
 }
 
-button:active {
-    background-color: #003366;
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f1f5f9;
+    padding: 20px;
 }
 
-/* Texto de ajuda (small) */
-small {
-    display: block;
-    margin-top: 6px;
-    color: #6c757d;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.controles-voz {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #f8fafc;
+    color: var(--primary);
+    font-weight: bold;
+    text-transform: uppercase;
     font-size: 0.85rem;
+}
+
+tr:nth-child(even) { background-color: var(--row-alt); }
+tr:hover { background-color: #a8adb4; }
+
+.btn-acao { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; }
+.btn-parar { background: #64748b; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; }
+
+.btn-ouvir-linha {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Acessibilidade para foco de teclado */
+.table-wrapper:focus { outline: 3px solid #3b82f6; }
+/* Definição base no HTML para permitir o redimensionamento */
+html {
+    font-size: 16px; /* Tamanho padrão */
+    transition: font-size 0.2s ease-in-out;
+}
+
+body {
+    font-size: 1rem; /* Isso equivale a 16px inicialmente */
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f1f5f9;
+    padding: 20px;
+}
+
+.controles-acessibilidade {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.btn-fonte {
+    background: #e2e8f0;
+    border: 1px solid #cbd5e1;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.btn-fonte:hover {
+    background: #cbd5e1;
+}
+
+/* Garante que a tabela use o tamanho relativo */
+table {
+    width: 100%;
+    font-size: 1rem; 
+}
+
+th { font-size: 0.9rem; } /* Cabeçalhos um pouco menores que o corpo */
+
+
+/* Definição de Cores Padrão (Coloridas) */
+:root {
+    --bg-body: #f1f5f9;
+    --bg-container: #ffffff;
+    --text-principal: #1e293b;
+    --primary-color: #1e40af;
+    --border-color: #cbd5e1;
+    --row-hover: #f1f5f9;
+    --btn-bg: #ffffff;
+    --btn-text: #1e40af;
+    --btn-border: #1e40af;
+}
+
+/* Modo de Alto Contraste: Estritamente PRETO E BRANCO */
+body.alto-contraste {
+    --bg-body: #000000;         /* Fundo da página preto */
+    --bg-container: #000000;    /* Fundo da tabela preto */
+    --text-principal: #ffffff;  /* Texto totalmente branco */
+    --primary-color: #ffffff;   /* Bordas e Títulos brancos */
+    --border-color: #ffffff;    /* Linhas da tabela brancas */
+    --row-hover: #333333;       /* Destaque de linha em cinza muito escuro */
+    --btn-bg: #000000;          /* Botão preto */
+    --btn-text: #ffffff;        /* Texto do botão branco */
+    --btn-border: #ffffff;      /* Borda do botão branca */
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-principal);
+    transition: background 0.2s, color 0.2s;
+    font-family: Arial, sans-serif; /* Fontes sem serifa são melhores para contraste */
+}
+
+.container {
+    background-color: var(--bg-container);
+    border: 2px solid var(--border-color);
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--text-principal);
+    border: 1px solid var(--border-color);
+}
+
+th {
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-body);
+    color: var(--primary-color);
+    padding: 12px;
+}
+
+td {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+}
+
+/* Estilo dos Botões de Acessibilidade */
+.btn-fonte, .btn-contraste, .btn-acao, .btn-parar {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 2px solid var(--btn-border);
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-fonte:focus, .btn-contraste:focus {
+    outline: 4px solid #ff0; /* Foco amarelo para ser visível no preto */
 }

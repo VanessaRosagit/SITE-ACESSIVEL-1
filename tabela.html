@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cadastros - Acessível</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>Painel de Usuários Cadastrados</h1>
+            
+        </header>
+
+        <section class="controles-voz" aria-label="Controles de acessibilidade por voz">
+            <button id="btnLerTudo" class="btn-acao">🔊 Ler Tabela Inteira</button>
+            <button id="btnParar" class="btn-parar">Parar Voz 🔇</button>
+            <div class="grupo-fonte">
+        <span>Tamanho da Letra:</span>
+        <button id="btnAumentar" class="btn-fonte" aria-label="Aumentar tamanho do texto">A+</button>
+        <button id="btnDiminuir" class="btn-fonte" aria-label="Diminuir tamanho do texto">A-</button>
+        <button id="btnReset" class="btn-fonte" aria-label="Resetar tamanho do texto">Reset</button>
+    </div>
+
+        </section>
+        <section class="controles-acessibilidade">
+    <div class="grupo-contraste">
+        <button id="btnContraste" class="btn-contraste" aria-label="Alternar alto contraste">
+            🌓 Alto Contraste
+        </button>
+    </div>
+</section>
+
+        <div class="table-wrapper" tabindex="0" role="region" aria-label="Tabela de dados de usuários">
+            <table id="tabelaPessoas">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">Idade</th>
+                        <th scope="col">Endereço Completo</th>
+                        <th scope="col">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="tabela-script.js"></script>
+</body>
+</html>

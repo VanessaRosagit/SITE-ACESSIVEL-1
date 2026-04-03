@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Robusto e Acessível</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main id="main-content">
+    <form id="formularioVinte" novalidate>
+        <h1>Formulário de Cadastro Profissional</h1>
+        <p class="instrucoes">Campos com <span class="req">*</span> são obrigatórios.</p>
+
+        <fieldset>
+            <legend>Dados de Identificação</legend>
+            <div class="grid-form">
+                <div class="campo">
+                    <label for="f1_nome">Nome Completo <span class="req">*</span></label>
+                    <input type="text" id="f1_nome" name="nome" required autocomplete="name">
+                </div>
+                <div class="campo">
+                    <label for="f2_cpf">CPF <span class="req">*</span></label>
+                    <input type="text" id="f2_cpf" name="cpf" required placeholder="000.000.000-00">
+                </div>
+            </div>
+
+            <div class="grid-form">
+                <div class="campo">
+                    <label for="f3_nasc">Data de Nascimento</label>
+                    <input type="date" id="f3_nasc" name="nascimento">
+                </div>
+                <div class="campo">
+                    <label for="f4_genero">Gênero</label>
+                    <select id="f4_genero" name="genero">
+                        <option value="">Selecione...</option>
+                        <option value="f">Feminino</option>
+                        <option value="m">Masculino</option>
+                        <option value="nb">Não-binário</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Contato e Endereço</legend>
+            <div class="grid-form">
+                <div class="campo">
+                    <label for="f5_email">E-mail <span class="req">*</span></label>
+                    <input type="email" id="f5_email" name="email" required autocomplete="email">
+                </div>
+                <div class="campo">
+                    <label for="f6_tel">Telefone</label>
+                    <input type="tel" id="f6_tel" name="telefone" placeholder="(00) 00000-0000">
+                </div>
+            </div>
+
+            <div class="grid-form">
+                <div class="campo">
+                    <label for="f7_cep">CEP</label>
+                    <input type="text" id="f7_cep" name="cep" placeholder="00000-000">
+                </div>
+                <div class="campo">
+                    <label for="f8_logradouro">Logradouro</label>
+                    <input type="text" id="f8_logradouro" name="logradouro">
+                </div>
+            </div>
+
+            <div class="grid-form">
+                <div class="campo">
+                    <label for="f9_cidade">Cidade</label>
+                    <input type="text" id="f9_cidade" name="cidade">
+                </div>
+                <div class="campo">
+                    <label for="f10_estado">Estado (UF)</label>
+                    <input type="text" id="f10_estado" name="estado" maxlength="2">
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Informações Profissionais</legend>
+            <div class="grid-form">
+                <div class="campo">
+                    <label for="f11_cargo">Cargo Atual</label>
+                    <input type="text" id="f11_cargo" name="cargo">
+                </div>
+                <div class="campo">
+                    <label for="f12_empresa">Última Empresa</label>
+                    <input type="text" id="f12_empresa" name="empresa">
+                </div>
+            </div>
+
+            <div class="grid-form">
+                <div class="campo">
+                    <label for="f13_escolaridade">Escolaridade</label>
+                    <select id="f13_escolaridade" name="escolaridade">
+                        <option value="superior">Superior Completo</option>
+                        <option value="pos">Pós-Graduação</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="f14_idioma">Idioma Principal</label>
+                    <input type="text" id="f14_idioma" name="idioma">
+                </div>
+            </div>
+
+            <div class="grid-form">
+                <div class="campo">
+                    <label for="f15_linkedin">URL LinkedIn</label>
+                    <input type="url" id="f15_linkedin" name="linkedin">
+                </div>
+                <div class="campo">
+                    <label for="f16_portfolio">URL Portfólio</label>
+                    <input type="url" id="f16_portfolio" name="portfolio">
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferências e Outros</legend>
+            <div class="grid-form">
+                <div class="campo">
+                    <label for="f17_salario">Pretensão Salarial</label>
+                    <input type="number" id="f17_salario" name="salario" step="100">
+                </div>
+                <div class="campo">
+                    <label for="f18_dispo">Início Disponível</label>
+                    <input type="date" id="f18_dispo" name="disponibilidade">
+                </div>
+            </div>
+
+            <div class="grid-form">
+                <div class="campo-full">
+                    <label for="f19_bio">Resumo (Bio)</label>
+                    <textarea id="f19_bio" name="bio" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="grid-form">
+                <div class="campo-check">
+                    <input type="checkbox" id="f20_termos" name="termos" required>
+                    <label for="f20_termos">Concordo com os termos e privacidade <span class="req">*</span></label>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="acoes">
+            <button type="submit" class="btn-enviar">Enviar Cadastro</button>
+            <button type="reset" class="btn-limpar">Limpar Todos os Campos</button>
+        </div>
+    </form>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
