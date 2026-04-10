@@ -1,56 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Cadastros - Acessível</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<header>
+    <button class="openbtn" onclick="toggleMenu()">☰</button>
+    <span class="logo">Candidatos Cadastrados</span>
+</header>
+
+<div class="accessibility-bar" role="complementary">
+    <div class="grupo-controle">
+        <button onclick="alterarFonte(2)">A+</button>
+        <button onclick="alterarFonte(-2)">A-</button>
+    </div>
+
+    <div class="grupo-controle">
+        <button class="btn-audio" onclick="lerTabelaInteira()">🔊 Ler Lista</button>
+        <button id="btnPararVoz" class="btn-parar">Stop 🔇</button>
+    </div>
+
+    <button id="btnContraste" class="btn-contraste">🌓 Contraste</button>
+</div>
+
+    
+    <nav id="menuLateral" class="sidebar">
+        <button class="closebtn" onclick="toggleMenu()">&times;</button>
+        <a href="index.html"> 🏠Início</a>
+        <a href="form.html">📝Cadastro</a>
+        <a href="tabela.html"> 📊Relatório</a>
+    </nav>
 
     <main class="container">
-        <header>
-            <h1>Painel de Usuários Cadastrados</h1>
+        <h1>Painel de Recrutamento</h1>
+        <div class="controles-tabela">
             
-        </header>
+        </div>
 
-        <section class="controles-voz" aria-label="Controles de acessibilidade por voz">
-            <button id="btnLerTudo" class="btn-acao">🔊 Ler Tabela Inteira</button>
-            <button id="btnParar" class="btn-parar">Parar Voz 🔇</button>
-            <div class="grupo-fonte">
-        <span>Tamanho da Letra:</span>
-        <button id="btnAumentar" class="btn-fonte" aria-label="Aumentar tamanho do texto">A+</button>
-        <button id="btnDiminuir" class="btn-fonte" aria-label="Diminuir tamanho do texto">A-</button>
-        <button id="btnReset" class="btn-fonte" aria-label="Resetar tamanho do texto">Reset</button>
-    </div>
-
-        </section>
-        <section class="controles-acessibilidade">
-    <div class="grupo-contraste">
-        <button id="btnContraste" class="btn-contraste" aria-label="Alternar alto contraste">
-            🌓 Alto Contraste
-        </button>
-    </div>
-</section>
-
-        <div class="table-wrapper" tabindex="0" role="region" aria-label="Tabela de dados de usuários">
+        <div class="table-wrapper">
             <table id="tabelaPessoas">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">CPF</th>
-                        <th scope="col">Idade</th>
-                        <th scope="col">Endereço Completo</th>
-                        <th scope="col">Ação</th>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Cargo Pretendido</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
                     </tbody>
             </table>
         </div>
+        
+        <div style="margin-top: 30px; display: flex; gap: 10px;">
+            <a href="form.html" class="btn-enviar">Novo Cadastro</a>
+            <button onclick="limparDados()" class="btn-limpar">Limpar Todos os Dados</button>
+        </div>
     </main>
 
-    <script src="tabela-script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

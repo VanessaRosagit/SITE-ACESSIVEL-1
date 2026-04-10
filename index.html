@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Empregos Acessível</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <button class="openbtn" onclick="toggleMenu()">☰</button>
+    <span class="logo">Portal de Empregos</span>
+</header>
+
+<div class="accessibility-bar">
+    <div class="grupo-controle">
+        <button onclick="alterarFonte(2)">A+</button>
+        <button onclick="alterarFonte(-2)">A-</button>
+    </div>
+    <div class="grupo-controle">
+        <button class="btn-audio" onclick="falar('Bem-vindo ao Portal de Empregos')">🔊 Ouvir Saudação</button>
+    </div>
+    <button id="btnContraste">🌓 Contraste</button>
+</div>
+    <nav id="menuLateral" class="sidebar">
+        <button class="closebtn" onclick="toggleMenu()" aria-label="Fechar menu">&times;</button>
+        <a href="index.html">🏠 Início</a>
+        <a href="form.html">📝 Cadastro</a>
+        <a href="tabela.html">📊 Relatório</a>
+    </nav>
+
+    <main id="conteudoPrincipal" class="container">
+        <section id="home-content">
+            <h1>Bem-vindo ao Portal de Empregos</h1>
+            <p>Sistema moderno focado em inclusão digital.</p>
+            <div class="acoes-home">
+                <a href="form.html" class="btn-enviar">Cadastrar Novo Currículo</a>
+                <a href="tabela.html" class="btn-limpar">Ver Relatórios</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

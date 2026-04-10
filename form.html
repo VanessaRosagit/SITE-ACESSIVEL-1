@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Completo - Portal de Empregos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <button class="openbtn" onclick="toggleMenu()">☰</button>
+    <span class="logo">Formulário para Cadastrogit</span>
+</header>
+
+<div class="accessibility-bar">
+    <div class="grupo-controle">
+        <button onclick="alterarFonte(2)">A+</button>
+        <button onclick="alterarFonte(-2)">A-</button>
+    </div>
+    <div class="grupo-controle">
+        
+    </div>
+    <button id="btnContraste">🌓 Contraste</button>
+</div>
+
+   
+
+    <nav id="menuLateral" class="sidebar">
+        <button class="closebtn" onclick="toggleMenu()">&times;</button>
+        <a href="index.html">🏠 Início</a>
+        <a href="form.html">📝 Cadastro</a>
+        <a href="tabela.html">📊 Relatório</a>
+    </nav>
+
+    <main class="container">
+        <form id="formularioVinte">
+            <h1>Formulário de Candidatura</h1>
+            <p class="instrucoes">Campos com <strong>*</strong> são obrigatórios.</p>
+
+            <fieldset>
+                <legend>1. Identificação Pessoal</legend>
+                <div class="campo"><label for="f1_nome">Nome Completo *</label><input type="text" id="f1_nome" required></div>
+                <div class="campo"><label for="f2_cpf">CPF *</label><input type="text" id="f2_cpf" placeholder="000.000.000-00" required></div>
+                <div class="campo"><label for="f3_nasc">Data de Nascimento *</label><input type="date" id="f3_nasc" required></div>
+                <div class="campo">
+                    <label for="f4_genero">Gênero</label>
+                    <select id="f4_genero">
+                        <option value="Não informado">Selecione...</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>2. Contato e Endereço</legend>
+                <div class="campo"><label for="f5_email">E-mail *</label><input type="email" id="f5_email" required></div>
+                <div class="campo"><label for="f6_tel">Telefone/WhatsApp</label><input type="tel" id="f6_tel" placeholder="(00) 00000-0000"></div>
+                <div class="campo"><label for="f7_cep">CEP</label><input type="text" id="f7_cep"></div>
+                <div class="campo"><label for="f8_cidade">Cidade/UF *</label><input type="text" id="f8_cidade" required></div>
+            </fieldset>
+
+            <fieldset>
+                <legend>3. Experiência e Formação</legend>
+                <div class="campo"><label for="f9_cargo">Cargo Pretendido *</label><input type="text" id="f9_cargo" required></div>
+                <div class="campo"><label for="f10_empresa">Última Empresa</label><input type="text" id="f10_empresa"></div>
+                <div class="campo">
+                    <label for="f11_escolaridade">Escolaridade</label>
+                    <select id="f11_escolaridade">
+                        <option value="Médio">Ensino Médio</option>
+                        <option value="Superior">Ensino Superior</option>
+                        <option value="Pós">Pós/MBA</option>
+                    </select>
+                </div>
+                <div class="campo"><label for="f12_idioma">Idioma Estrangeiro</label><input type="text" id="f12_idioma"></div>
+                <div class="campo"><label for="f13_linkedin">Link LinkedIn</label><input type="url" id="f13_linkedin"></div>
+                <div class="campo"><label for="f14_portfolio">Link Portfólio/Site</label><input type="url" id="f14_portfolio"></div>
+            </fieldset>
+
+            <fieldset>
+                <legend>4. Informações Adicionais</legend>
+                <div class="campo"><label for="f15_salario">Pretensão Salarial (R$)</label><input type="number" id="f15_salario"></div>
+                <div class="campo"><label for="f16_dispo">Data Disponível para Início</label><input type="date" id="f16_dispo"></div>
+                <div class="campo">
+                    <label for="f17_modelo">Modelo de Trabalho</label>
+                    <select id="f17_modelo">
+                        <option value="Presencial">Presencial</option>
+                        <option value="Híbrido">Híbrido</option>
+                        <option value="Remoto">Remoto</option>
+                    </select>
+                </div>
+                <div class="campo"><label for="f18_bio">Resumo Profissional (Bio)</label><textarea id="f18_bio" rows="3"></textarea></div>
+                <div class="campo-check">
+                    <input type="checkbox" id="f19_pcd">
+                    <label for="f19_pcd">Pessoa com Deficiência (PcD)</label>
+                </div>
+                <div class="campo-check">
+                    <input type="checkbox" id="f20_termos" required>
+                    <label for="f20_termos">Aceito os termos de privacidade *</label>
+                </div>
+            </fieldset>
+
+            <div class="acoes">
+                <button type="submit" class="btn-enviar">Finalizar Cadastro</button>
+                <button type="reset" class="btn-limpar">Limpar Tudo</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
