@@ -35,3 +35,27 @@ body.alto-contraste .openbtn { color: black; }
 
 .btn-enviar { background: var(--primary); color: white; padding: 12px 25px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-block; }
 .btn-limpar { background: #64748b; color: white; padding: 12px 25px; border: none; border-radius: 4px; cursor: pointer; }
+
+
+table {
+    border-collapse: collapse; /* Mantém as bordas unidas */
+    width: 100%;
+    /* Adiciona as linhas nas laterais externas da tabela */
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+    /* Opcional: se quiser fechar o topo também */
+    border-top: 2px solid #333; 
+}
+
+/* Mantém as bordas internas que já fizemos */
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #333;
+}
+
+/* Linhas verticais entre as colunas */
+td:not(:first-child), 
+th:not(:first-child) {
+    border-left: 2px solid #333;
+}
